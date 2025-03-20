@@ -7,6 +7,7 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="styles.css" />
+
   <title>Portfolio</title>
 </head>
 
@@ -14,67 +15,126 @@
   <header class="header">
     <nav class="navbar">
       <div class="logo">
-        < Ivaylo <span class="logo-props"> role={'Full Stack Developer'} </span>
-          .../>
+        <span>
+          < Ivaylo />
+        </span>
       </div>
+      <ul class="nav-links">
+        <li class="nav-item">01.About</li>
+        <li class="nav-item">02.Tech Stack</li>
+        <li class="nav-item">03.Projects</li>
+      </ul>
     </nav>
   </header>
   <main class="content">
     <section class="bio">
+
       <div class="bio-content">
-        <h3>
-          Hello, My name is Ivaylo. I'm a full stack developer with
-          TypeScript.
-        </h3>
+        <div class="about">
+          <h1><span>01.</span>About Me</h1>
+          <div class="line"></div>
+        </div>
+        <span class="bio-greeting">Hi, my name is</span>
+        <h2 class="bio-name">Ivaylo Georgiev.</h2>
+        <p class="bio-info">I build things for the web.</p>
+        <div class="bio-sub-info">
+          <span class="">I'm a software engineer with a year of professional experience
+            developing full-stack applications.</span>
+        </div>
       </div>
       <div class="bio-image">
         <img class="bio-pic" src="images/profile.jpeg" />
       </div>
     </section>
+    <hr class="section-divider" />
     <section class="tech-stack">
       <div class="tech-info">
-        <h3 class="tech-heading">Tech Stack</h3>
+        <h1 class="tech-heading"><span>02.</span>Tech Stack</h1>
+        <div class="line"></div>
       </div>
       <div class="tech-cards">
         <div class="icon-card">
-          <img src="images/svg/typescript.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/typescript.svg" alt="TypeScript Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/nestjs.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/nestjs.svg" alt="NestJS Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/angular.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/angular.svg" alt="Angular Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/react.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/react.svg" alt="React Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/git.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/git.svg" alt="Git Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/postgresql.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/postgresql.svg" alt="PostgreSQL Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/graphql.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/graphql.svg" alt="GraphQL Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/prisma.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/prisma.svg" alt="Prisma Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/html.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/html.svg" alt="HTML Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/css.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/css.svg" alt="CSS Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/docker.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/docker.svg" alt="Docker Icon" class="tech-icon" />
         </div>
         <div class="icon-card">
-          <img src="images/svg/postman.svg" alt="tech icon" class="tech-icon" />
+          <img src="images/svg/postman.svg" alt="Postman Icon" class="tech-icon" />
         </div>
       </div>
     </section>
+    <hr class="section-divider" />
+    <section class="projects ">
+      <div class="projects-info">
+        <h1 class="projects-heading"><span>03.</span>Projects</h1>
+        <div class="line"></div>
+      </div>
+      <div class="projects-content">
+        <div class="project-card hidden">
+          <div class="project-card-header">
+            <img src="images/svg/folder.svg" alt="Folder Icon" class="project-card-icon-folder">
+            <a href="https://github.com/IvoGeorgievx/JobSpot" target="_blank">
+              <img src="images/svg/github.svg" alt="GitHub Icon" class="project-card-icon-github">
+            </a>
+
+          </div>
+          <div class="project-card-heading">
+            <h2>Job Application Hub</h2>
+          </div>
+          <div class="project-card-description">
+            <p>A platform where companies can post job openings and applicants can apply for them.</p>
+          </div>
+          <div class="project-card-footer">
+            <span>NestJs, React </span>
+          </div>
+        </div>
+        <div class="project-card hidden">
+          <div class="project-card-header">
+            <img src="images/svg/folder.svg" alt="Folder Icon" class="project-card-icon-folder">
+            <img src="images/svg/github.svg" alt="Folder Icon" class="project-card-icon-github">
+          </div>
+          <div class="project-card-heading">
+            <h2>Dota Statistics Tracker</h2>
+          </div>
+          <div class="project-card-description">
+            <p>A tool to help players pick the best hero and items depending on statistics.</p>
+          </div>
+          <div class="project-card-footer">
+            <span>Angular</span>
+          </div>
+        </div>
+    </section>
+    <hr class="section-divider">
   </main>
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -9,9 +9,10 @@
 :root {
 	--primary-color: #1f2937;
 	--secondary-color: #10b981;
-	--accent-color: #f472b6;
+	--accent-color: #fbbf24;
 	--bg-color: #111827;
-	--text-color: #e5e7eb;
+	--primary-text-color: #e5e7eb;
+	--secondary-text-color: #6b7280;
 	--border: 2px solid #34d399;
 	--border-radius: 32px;
 	--box-shadow: 2px 4px 8px rgba(16, 185, 129, 0.3);
@@ -25,7 +26,7 @@ body {
 	font-family: "IBM Plex Mono", monospace;
 	font-size: 16px;
 	background-color: var(--bg-color);
-	color: var(--text-color);
+	color: var(--primary-text-color);
 	letter-spacing: 1.2px;
 	line-height: 1.6;
 }
@@ -41,7 +42,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 1rem;
-	padding: 1rem;
+	padding: 1rem 2rem;
 	border-radius: var(--border-radius);
 	background: rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(10px);
@@ -62,22 +63,20 @@ body {
 	display: flex;
 	align-items: center;
 	font-weight: 700;
-	margin: 0 16px;
 }
 
-.logo-props {
-	display: inline-block;
-	width: 0;
-	overflow: hidden;
-	white-space: nowrap;
-	margin-left: 0.5rem;
-	color: var(--accent-color);
-	transition: width 0.3s ease;
-	max-width: 100%;
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
 }
 
-.logo:hover .logo-props {
-	width: 50%;
+.nav-links .nav-item {
+	list-style: none;
+}
+
+.nav-item {
+	color: var(--secondary-color);
 }
 
 .content {
@@ -86,27 +85,83 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+@media (max-width: 1024px) {
+	.content {
+		width: 100%;
+	}
+}
 
 .bio {
 	display: flex;
-	gap: 2rem;
+	gap: 8rem;
 	max-height: 450px;
+	padding: 2rem;
 }
 
 .bio-content {
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	white-space: nowrap;
 	font-size: 1.6rem;
 	text-wrap: wrap;
-	margin-left: auto;
-	max-width: 50%;
 }
 
-.bio-content h3 {
-	font-size: clamp(0.8rem, 2.5vw, 2rem);
+.bio-content .about {
+	align-self: self-start;
+	margin-bottom: 2rem;
 }
 
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.about h1 {
+	font-size: clamp(1.5rem, 2.5vw, 2.7rem);
+}
+
+.about span {
+	font-size: 1.5rem;
+	margin-right: 0.5rem;
+	color: var(--secondary-color);
+}
+
+.line {
+	content: "";
+	border-bottom: 1px solid var(--primary-color);
+	width: 200px;
+	margin: 0 1rem;
+}
+
+.bio-content .bio-greeting {
+	align-self: self-start;
+	font-size: 14px;
+	color: var(--secondary-color);
+}
+
+.bio-content .bio-name {
+	align-self: self-start;
+	line-height: 1.4;
+	font-size: clamp(1.5rem, 2.5vw, 2.7rem);
+	color: var(--primary-text-color);
+}
+
+.bio-content .bio-info {
+	line-height: 1.4;
+	align-self: self-start;
+	font-size: clamp(1.5rem, 2.5vw, 2.7rem);
+	color: var(--secondary-text-color);
+}
+
+.bio-sub-info {
+	align-self: flex-start;
+	margin-top: 0.5rem;
+	width: 40%;
+	line-height: 1.9;
+	font-size: 14px;
+}
 .bio-image {
 	width: 450px;
 	height: auto;
@@ -126,36 +181,188 @@ body {
 	height: auto;
 }
 
-.tech-stack {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.section-divider {
+	border: none;
+	height: 2px;
+	background-color: var(--secondary-color);
+	margin: 2rem 0;
+	opacity: 0.5;
 }
 
-.tech-info,
-.tech-cards {
-	flex: 1;
+.tech-stack {
+	padding: 2rem;
+}
+
+.tech-info {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2rem;
 }
 
 .tech-heading {
-	font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+	font-size: 3rem;
+	margin-bottom: 0.5rem;
+}
+
+.tech-heading span {
+	font-size: 1.5rem;
+	color: var(--secondary-color);
+	margin-right: 0.5rem;
+}
+
+.tech-info {
+	text-align: end;
+	margin-bottom: 2rem;
+}
+
+.tech-heading,
+.projects-heading {
+	font-size: clamp(1.5rem, 2.5vw, 2.7rem);
+	margin-bottom: 0.5rem;
+}
+
+.projects-info span {
+	font-size: 1.5rem;
+	margin-right: 0.5rem;
+	color: var(--secondary-color);
 }
 
 .tech-cards {
 	display: flex;
-	gap: 16px;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.icon-card {
+	background-color: var(--primary-color);
+	padding: 1rem;
+	border-radius: 8px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.3s, box-shadow 0.3s;
+	width: 120px;
+	height: 120px;
+}
+
+.icon-card:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 10px var(--secondary-color);
 }
 
 .tech-icon {
-	width: 44px;
-	height: 64px;
-	margin: 0.5rem;
-	cursor: pointer;
-	transition: transform 0.3s, filter 0.3s;
+	width: 60px;
+	height: 60px;
+	filter: drop-shadow(0 0 2px var(--secondary-color));
+	transition: transform 0.3s;
 }
 
-.tech-icon:hover {
+.icon-card:hover .tech-icon {
 	transform: scale(1.1);
-	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
+}
+
+@media (max-width: 768px) {
+	.tech-heading {
+		font-size: 1.5rem;
+	}
+
+	.icon-card {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.hidden {
+	opacity: 0;
+	filter: blur(5px);
+	transform: translateX(-100%);
+	transition: all 1s;
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
+}
+
+.projects {
+	display: flex;
+	padding: 2rem;
+	flex-direction: column;
+}
+
+.projects-info {
+	align-self: self-start;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.projects h3 {
+	font-size: 3rem;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.projects-content {
+	gap: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.project-card {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 300px;
+	min-height: 340px;
+	border-radius: 4px;
+	background-color: var(--primary-color);
+	padding: 1.5rem;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+	transform: translateY(-5px);
+	.project-card-heading {
+		color: var(--secondary-color);
+	}
+}
+
+.project-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.project-card-icon-folder {
+	width: 35px;
+	height: 35px;
+}
+.project-card-icon-github {
+	width: 25px;
+	height: 25px;
+}
+
+.project-card-heading,
+.project-card-footer {
+	margin-top: 1rem;
+}
+
+.project-card-heading h2 {
+	font-weight: 600;
+	font-size: 1.4rem;
+}
+
+.project-card-footer span {
+	font-size: 14px;
+	color: var(--secondary-text-color);
 }
