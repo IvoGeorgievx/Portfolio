@@ -12,34 +12,39 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" id="about">
     <nav class="navbar">
       <div class="logo">
         <span>
-          < Ivaylo />
+          <a href="#about">
+            < Ivaylo />
+          </a>
         </span>
       </div>
       <ul class="nav-links">
-        <li class="nav-item">01.About</li>
-        <li class="nav-item">02.Tech Stack</li>
-        <li class="nav-item">03.Projects</li>
+        <li class="nav-item"><a href="#about">01. About</a></li>
+        <li class="nav-item"><a href="#tech-stack">02. Tech Stack</a></li>
+        <li class="nav-item"><a href="#projects">03. Projects</a></li>
+        <li class="nav-item"><a href="#interests">04. Interests</a></li>
       </ul>
     </nav>
   </header>
   <main class="content">
     <section class="bio">
-
       <div class="bio-content">
-        <div class="about">
-          <h1><span>01.</span>About Me</h1>
+        <div class="bio-info">
+          <h1 class="about-heading"><span>01.</span>About</h1>
           <div class="line"></div>
         </div>
-        <span class="bio-greeting">Hi, my name is</span>
-        <h2 class="bio-name">Ivaylo Georgiev.</h2>
-        <p class="bio-info">I build things for the web.</p>
-        <div class="bio-sub-info">
-          <span class="">I'm a software engineer with a year of professional experience
-            developing full-stack applications.</span>
+
+        <div class="bio-content-wrapper">
+          <span class="bio-greeting">Hi, my name is</span>
+          <h2 class="bio-name">Ivaylo Georgiev.</h2>
+          <p class="bio-info">I build things for the web.</p>
+          <div class="bio-sub-info">
+            <span>I'm a software engineer with a year of professional experience
+              developing full-stack applications.</span>
+          </div>
         </div>
       </div>
       <div class="bio-image">
@@ -47,7 +52,7 @@
       </div>
     </section>
     <hr class="section-divider" />
-    <section class="tech-stack">
+    <section class="tech-stack" id="tech-stack">
       <div class="tech-info">
         <h1 class="tech-heading"><span>02.</span>Tech Stack</h1>
         <div class="line"></div>
@@ -92,7 +97,7 @@
       </div>
     </section>
     <hr class="section-divider" />
-    <section class="projects ">
+    <section class="projects" id="projects">
       <div class="projects-info">
         <h1 class="projects-heading"><span>03.</span>Projects</h1>
         <div class="line"></div>
@@ -119,7 +124,7 @@
         <div class="project-card hidden">
           <div class="project-card-header">
             <img src="images/svg/folder.svg" alt="Folder Icon" class="project-card-icon-folder">
-            <img src="images/svg/github.svg" alt="Folder Icon" class="project-card-icon-github">
+            <img src="images/svg/github.svg" alt="Github Icon" class="project-card-icon-github">
           </div>
           <div class="project-card-heading">
             <h2>Dota Statistics Tracker</h2>
@@ -133,6 +138,27 @@
         </div>
     </section>
     <hr class="section-divider">
+    <section class="interests" id="interests">
+      <div class="interests-info">
+        <h1 class="interests-heading"><span>04.</span>Interests</h1>
+        <div class="line"></div>
+      </div>
+      <div class="interests-description">
+        <h3>Besides coding, I also enjoy:</h3>
+      </div>
+      <div class="interests-wrapper hidden">
+        <div class="interests-tabs">
+          <div class="interest-tab active" data-index="0">Books</div>
+          <div class="interest-tab" data-index="1">Sports</div>
+          <div class="interest-tab" data-index="2">History</div>
+          <div class="interest-tab" data-index="3">Hiking</div>
+        </div>
+        <div class="interest-content" id="interest-content">
+          <span>Reading</span>
+          <span>Something Something</span>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="script.js"></script>
 </body>
