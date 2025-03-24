@@ -191,8 +191,9 @@ body {
 	align-self: self-start;
 	line-height: 1.4;
 	font-weight: 600;
-	font-size: clamp(1.5rem, 2.5vw, 2.7rem);
+	font-size: clamp(1.8rem, 2.5vw, 2.7rem);
 	color: var(--primary-text-color);
+	margin-bottom: 0.5rem;
 }
 
 .bio-info {
@@ -587,7 +588,14 @@ footer {
 		padding: 0.3rem 1rem;
 	}
 
-	.tech-stack {
+	.line {
+		max-width: 140px;
+	}
+
+	.tech-stack,
+	.bio,
+	.projects,
+	.interests {
 		padding: 1rem;
 	}
 
@@ -599,19 +607,27 @@ footer {
 		margin-bottom: 1rem;
 	}
 
-	.bio-name,
-	.bio-info {
-		line-height: 2 !important;
-	}
-
 	.bio-content .about {
 		margin-bottom: 1rem;
+	}
+
+	.bio-name {
+		line-height: 1.6;
+	}
+
+	.bio-content-wrapper {
+		margin-left: 2.5rem;
+	}
+
+	.bio-sub-info {
+		line-height: 1.4;
 	}
 
 	.bio-image {
 		display: flex;
 		justify-content: center;
 		margin: 2rem auto;
+		width: auto;
 		clip-path: none;
 		background-color: inherit;
 	}
@@ -635,6 +651,23 @@ footer {
 
 	.interest-content span {
 		font-size: 15px;
+	}
+
+	.interests-wrapper {
+		margin-left: 0;
+	}
+
+	.interest-tab {
+		padding: 12px;
+		min-width: 135px;
+	}
+
+	.interest-tab.active::after {
+		width: 25px;
+	}
+
+	.tech-stack .line {
+		flex: 1;
 	}
 
 	footer {
