@@ -15,6 +15,9 @@
 	--secondary-text-color: #6b7280;
 	--border: 2px solid #34d399;
 	--border-radius: 32px;
+	--border-radius-xl: 16px;
+	--border-radius-l: 8px;
+	--border-radius-s: 4px;
 	--box-shadow: 2px 4px 8px rgba(16, 185, 129, 0.3);
 	::-webkit-scrollbar {
 		width: 8px;
@@ -428,16 +431,18 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 2rem;
 }
 
 .interests-description {
 	align-self: self-start;
+	margin-bottom: 2rem;
 }
 
 .interests-wrapper {
 	display: flex;
 	justify-content: center;
-	width: 50%;
+	width: 75%;
 	height: 50%;
 	position: relative;
 	margin-left: 20px;
@@ -449,13 +454,14 @@ body {
 }
 
 .interest-tab {
-	border-left: 3px solid var(--primary-text-color);
+	border-left: 4px solid var(--primary-text-color);
+	min-width: 175px;
 	padding: 24px;
 	cursor: pointer;
 	transition: border-left-color 0.3s ease;
 	position: relative;
-	border-top-right-radius: 8px;
-	border-bottom-right-radius: 8px;
+	border-top-right-radius: var(--border-radius-l);
+	border-bottom-right-radius: var(--border-radius-l);
 }
 
 .interest-tab:hover {
@@ -463,7 +469,7 @@ body {
 }
 
 .active {
-	border-left: 3px solid var(--secondary-color);
+	border-left: 4px solid var(--secondary-color);
 }
 
 .interest-tab::after {
@@ -489,7 +495,79 @@ body {
 
 .interest-content {
 	padding: 1rem;
+	position: relative;
+	border: 4px solid var(--secondary-color);
+	border-radius: var(--border-radius-l);
+	z-index: 1;
 }
+
+.interest-content span {
+	color: var(--primary-text-color);
+}
+
+.interest-content-background {
+	border: 10px solid rgba(255, 255, 255, 0.1);
+	opacity: 0.1;
+	border-radius: var(--border-radius-l);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 8%;
+	left: 4%;
+	z-index: 0;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	height: 70px;
+	background-color: var(--primary-color);
+	padding: 0 2rem;
+	gap: 8px;
+}
+
+.contact-card,
+.contact-card a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact-img {
+	width: 32px;
+	height: 32px;
+}
+
+.download-cv {
+	margin-top: 4rem;
+	border: 1px solid var(--secondary-color);
+	border-radius: var(--border-radius-l);
+}
+
+.download-btn {
+	display: block;
+	filter: drop-shadow(2px 4px 6px var(--secondary-color));
+	text-decoration: none;
+	padding: 1rem 2rem;
+	color: var(--primary-text-color);
+}
+
+@media (min-width: 1000px) and (max-width: 1800px) {
+	.bio-sub-info {
+		width: 80%;
+	}
+
+	.bio-image {
+		width: 900px;
+	}
+}
+
+@media (min-width: 1400px) and (max-width: 1800px) {
+	.bio-image {
+		width: 600px;
+	}
+}
+
 @media (max-width: 1024px) {
 	.content {
 		width: 100%;
@@ -545,6 +623,22 @@ body {
 
 	.section-divider {
 		margin: 1rem;
+	}
+
+	.interests-wrapper {
+		width: 100%;
+	}
+
+	.interests-description {
+		margin-bottom: 1rem;
+	}
+
+	.interest-content span {
+		font-size: 15px;
+	}
+
+	footer {
+		justify-content: center;
 	}
 }
 
