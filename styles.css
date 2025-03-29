@@ -290,7 +290,8 @@ body {
 }
 
 .about-heading span,
-.projects-info span {
+.projects-info span,
+.interests-heading span {
 	font-size: 1.5rem;
 	margin-right: 0.5rem;
 	color: var(--secondary-color);
