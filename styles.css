@@ -290,13 +290,15 @@ body {
 }
 
 .about-heading span,
-.projects-info span,
-.interests span {
+.projects-info span {
 	font-size: 1.5rem;
 	margin-right: 0.5rem;
 	color: var(--secondary-color);
 }
 
+.interests span {
+	font-size: 1.3rem;
+}
 .tech-cards {
 	display: flex;
 	flex-wrap: wrap;
