@@ -2,7 +2,25 @@
 <html lang="en">
 
 <head>
-  <!-- Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Portfolio</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+  <!--GTM-->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
@@ -11,8 +29,8 @@
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-5N2FXM4V');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Cookie consent -->
+  <!--END GTM-->
+  <!--Cookie banner-->
   <link rel="stylesheet" id="silktide-consent-manager-css" href="/silktide-consent-manager.css">
   <script src="/silktide-consent-manager.js"></script>
   <script>
@@ -27,57 +45,58 @@
         {
           id: "necessary",
           name: "Necessary",
-          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off.</p>",
           required: true,
           onAccept: function () {
-            console.log('Add logic for the required Necessary here');
+            console.log('Necessary cookies active');
           }
         },
         {
           id: "analytics",
           name: "Analytics",
-          description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+          description: "<p>These cookies help us improve the site by tracking popularity and movement.</p>",
           defaultValue: true,
           onAccept: function () {
+            // Now gtag is defined, so this won't error!
             gtag('consent', 'update', {
-              analytics_storage: 'granted',
+              'analytics_storage': 'granted'
             });
-            dataLayer.push({
-              'event': 'consent_accepted_analytics',
+            window.dataLayer.push({
+              'event': 'consent_accepted_analytics'
             });
           },
           onReject: function () {
             gtag('consent', 'update', {
-              analytics_storage: 'denied',
+              'analytics_storage': 'denied'
             });
           }
         },
         {
           id: "advertising",
           name: "Advertising",
-          description: "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
+          description: "<p>These cookies provide extra features and personalization.</p>",
           onAccept: function () {
             gtag('consent', 'update', {
-              ad_storage: 'granted',
-              ad_user_data: 'granted',
-              ad_personalization: 'granted',
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted'
             });
-            dataLayer.push({
-              'event': 'consent_accepted_advertising',
+            window.dataLayer.push({
+              'event': 'consent_accepted_advertising'
             });
           },
           onReject: function () {
             gtag('consent', 'update', {
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              ad_personalization: 'denied',
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied'
             });
           }
         }
       ],
       text: {
         banner: {
-          description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+          description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"#\" target=\"_blank\">Cookie Policy.</a></p>",
           acceptAllButtonText: "Accept all",
           acceptAllButtonAccessibleLabel: "Accept all cookies",
           rejectNonEssentialButtonText: "Reject non-essential",
@@ -87,21 +106,16 @@
         },
         preferences: {
           title: "Customize your cookie preferences",
-          description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+          description: "<p>We respect your right to privacy.</p>",
           creditLinkText: "Get this banner for free",
           creditLinkAccessibleLabel: "Get this banner for free"
         }
       }
     });
   </script>
-  <!--End Cookie consent -->
-  <meta charset="UTF-8" />
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--Cookie banner END-->
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/svg+xml" href="images/svg/suitcase.svg" />
-  <title>Portfolio</title>
 </head>
 
 <body>
